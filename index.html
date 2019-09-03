@@ -1,8 +1,67 @@
 <html>
-    <title>
-        Anvil Simulator
-    </title>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/data/conflict.js"></script>
+        <script src="js/data/applicable.js"></script>
+        <script src="js/data/enchant_list.js"></script>
+        <script src="js/logic.js"></script>
+        <script src="js/app.js"></script>
+        <title>
+            Anvil Simulator
+        </title>
+    </head>
+
     <body>
-        <h1 id="result"></h1>
+        <span>
+            <div id="target">
+                <div class="type">
+                    <select>
+                        <option value="Sword">Sword</option>
+                        <option value="Axe">Axe</option>
+                        <option value="Pickaxe">Pickaxe</option>
+                        <option value="Shovel">Shovel</option>
+                        <option value="Helmet">Helmet</option>
+                        <option value="Chestplate">Chestplate</option>
+                        <option value="Leggings">Leggings</option>
+                        <option value="Boots">Boots</option>
+                        <option value="Bow">Bow</option>
+                        <option value="Crossbow">Crossbow</option>
+                        <option value="Trident">Trident</option>
+                    </select>
+                </div>
+                <button class="addEnchantBtn">
+                    Add Enchant
+                </button>
+                <div class="enchant"></div>
+            </div>
+        </span>
+        <span>
+            <div id="sacrifice">
+                <div class="type">
+                    <select>
+                        <option value="Sword">Sword</option>
+                        <option value="Axe">Axe</option>
+                        <option value="Pickaxe">Pickaxe</option>
+                        <option value="Shovel">Shovel</option>
+                        <option value="Helmet">Helmet</option>
+                        <option value="Chestplate">Chestplate</option>
+                        <option value="Leggings">Leggings</option>
+                        <option value="Boots">Boots</option>
+                        <option value="Bow">Bow</option>
+                        <option value="Crossbow">Crossbow</option>
+                        <option value="Trident">Trident</option>
+                    </select>
+                </div>
+                <button class="addEnchantBtn">
+                    Add Enchant
+                </button>
+                <div class="enchant"></div>
+            </div>
+        </span>
+        <div id="main">
+            <button class="findCost">Find Cost</button>
+            <h2 id="cost"></h2>
+            <textarea readonly rows="10" cols="100" id="log"></textarea>
+        </div>
     </body>
 </html>
