@@ -2,11 +2,6 @@ function findCost() {
     function isConflictWithTarget(name) {
         var isConflict = false
         for (conflict_group of conflict) {
-            // console.log(
-            //     name,
-            //     conflict_group,
-            //     conflict_group.includes(name)
-            // )
             if (conflict_group.includes(name)) {
                 for (other_name of conflict_group) {
                     if (
@@ -14,12 +9,17 @@ function findCost() {
                         Object.keys(target.enchantments).includes(other_name)
                     ) {
                         isConflict = true
+                        $('#log').append(
+                            name + ' is incompatible with ' + other_name + '!'
+                        )
                     }
                 }
             }
         }
         return isConflict
     }
+
+    $('#log').text('') // reset textarea
 
     target = getTool('target')
     sacrifice = getTool('sacrifice')
@@ -39,7 +39,7 @@ function findCost() {
         // Add one level for every incompatible enchantment on the target (In Java Edition).
         if (isConflictWithTarget(name)) {
             // console.log(name + ' has conflict. Cost: 1')
-            $('#log').append(name + ' has conflict. Cost: 1')
+            $('#log').append(' Cost: 1')
             $('#log').append('\n')
             total_cost += 1
         }
@@ -74,7 +74,8 @@ function findCost() {
                 //If sacrifice level is equal, the target gains one level, unless it is already at the maximum level for that enchantment.
                 if (target.enchantments[name] == sacrifice.enchantments[name]) {
                     target.enchantments[name] = Math.min(
-                        target.enchantments[name] + 1,
+                        parseInt(target.enchantments[name], 10) +
+                            parseInt(1, 10),
                         enchant_list[name].max
                     )
                 }
@@ -90,6 +91,9 @@ function findCost() {
             else {
                 target.enchantments[name] = sacrifice.enchantments[name]
             }
+            // $('#log').append(
+            //     "Target's " + name + ' becomes ' + target.enchantments[name]
+            // )
 
             // For Java Edition, add the final level of the enchantment on the resulting item multiplied by the multiplier from the table below.
             multiplier = enchant_list[name].mul_item
@@ -99,7 +103,7 @@ function findCost() {
             cost = multiplier * target.enchantments[name]
             total_cost += cost
             $('#log').append(
-                'Enchant Name: ' +
+                'Result: ' +
                     name +
                     ' ' +
                     target.enchantments[name] +
@@ -109,8 +113,8 @@ function findCost() {
             $('#log').append('\n')
         }
 
-        $('#log').append('Total cost: ' + total_cost)
-        $('#log').append('\n')
+        // $('#log').append('Total cost: ' + total_cost)
+        // $('#log').append('\n')
     }
 
     $('#log').append('Final Cost: ')
