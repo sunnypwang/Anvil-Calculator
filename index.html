@@ -20,9 +20,18 @@
     </head>
 
     <body>
-        <div class="flex">
+        <div class="flex-wrapper">
             <div class="section bgcolor" id="target">
                 Target
+                <span class="right"
+                    ><label>Prior Work Penalty</label
+                    ><input
+                        id="target_penalty"
+                        type="number"
+                        placeholder="0"
+                        min="0"
+                        max="6"
+                /></span>
                 <div class="container type">
                     <select>
                         <option value="Sword">Sword</option>
@@ -36,19 +45,28 @@
                         <option value="Bow">Bow</option>
                         <option value="Crossbow">Crossbow</option>
                         <option value="Trident">Trident</option>
+                        <option value="Book">Book</option>
                     </select>
                 </div>
                 <div class="container ">
                     <button class="addEnchantBtn">
-                        Add Enchant
+                        Add Enchantment
                     </button>
                 </div>
 
                 <div class="container enchant"></div>
             </div>
-            <span>+</span>
+            <span class="plus-sign">+</span>
             <div class="section bgcolor" id="sacrifice">
-                Sacrifice
+                Sacrifice<span class="right"
+                    ><label>Prior Work Penalty</label
+                    ><input
+                        id="sacrifice_penalty"
+                        type="number"
+                        placeholder="0"
+                        min="0"
+                        max="6"
+                /></span>
                 <div class="container type">
                     <select>
                         <option value="Sword">Sword</option>
@@ -62,11 +80,12 @@
                         <option value="Bow">Bow</option>
                         <option value="Crossbow">Crossbow</option>
                         <option value="Trident">Trident</option>
+                        <option value="Book">Book</option>
                     </select>
                 </div>
-                <div class="container button-container">
+                <div class="container">
                     <button class="addEnchantBtn">
-                        Add Enchant
+                        Add Enchantment
                     </button>
                 </div>
                 <div class="container enchant"></div>
@@ -78,7 +97,7 @@
             </div>
         </div>
         <div class="section">
-            <div class="container button-container">
+            <div class="container">
                 <button class="findCost big">Find Cost</button>
             </div>
         </div>
