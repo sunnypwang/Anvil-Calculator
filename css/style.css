@@ -14,11 +14,11 @@ Not affiliated or endorsed by Mojang in anyway.  */
 
 * {
     font-family: 'minecraftia', monospace;
-    /* font-size: 1em; */
+    font-size: 1em;
 }
 
 button:not(.enchant_remove) {
-    width: 60%;
+    width: auto;
     padding: 0.5em;
     border-style: solid;
     border-width: 3px;
@@ -46,137 +46,175 @@ body {
     background-color: darkgray;
 }
 
-h2 {
-    text-align: center;
-}
-
-h4 {
-    text-align: center;
-}
-
-p {
-    text-align: center;
-}
-
 input[type='checkbox'] {
     width: 1.5em;
     height: 1.5em;
     margin-right: 0.5em;
 }
 
-.section.bgcolor {
-    background-color: rgb(80, 80, 80);
-}
-
 label {
     width: auto;
-    font-size: 60%;
     color: lightgray;
 }
 
 input[type='number'] {
     margin-left: 10px;
-    width: auto;
+    width: 3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+.left {
+    float: left;
 }
 
 .right {
     float: right;
 }
 
+.big-text {
+    font-size: 1.1em;
+}
+textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: none;
+}
+
+select {
+    -o-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0.2em;
+    /* text-align: center; */
+    width: 100%;
+    font-size: 100%;
+}
+
+option {
+    width: 100%;
+    font-size: 100%;
+}
+
+select.enchant_name {
+    width: 65%;
+}
+
+select.enchant_lv {
+    text-align: center;
+    width: 10%;
+}
+
+select.enchant_remove {
+    width: 10%;
+}
+
+.center {
+    text-align: center;
+    /* margin: auto; */
+}
+
+.section {
+    display: block;
+    width: auto;
+    padding: 10px;
+    color: white;
+}
+
+.section.bgcolor {
+    background-color: rgb(80, 80, 80);
+}
+
+.container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+#total_cost {
+    color: greenyellow;
+    font-size: 2em;
+}
+#result_tool {
+    color: yellow;
+    font-size: 1.3em;
+}
+
 /* Mobile */
 @media only screen and (max-width: 768px) {
-    .section {
-        display: block;
-        width: auto;
-        margin: 10px;
-        padding: 10px;
-        color: white;
-        /* border-style: solid;
-        border-color: red; */
-    }
-
     .container {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        margin-left: 10px;
-        margin-right: 10px;
-        text-align: center;
-        /* align-items: center; */
-        /* justify-content: center; */
-        width: auto;
-
-        /* border-style: solid;
-        border-color: black; */
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 1px;
+        margin-right: 1px;
     }
 
-    .center {
-        text-align: center;
-        /* margin: auto; */
-    }
-
-    .block {
-        display: block;
-    }
-
-    select {
-        -o-appearance: none;
-        -ms-appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        padding: 0.2em;
-        /* text-align: center; */
-        width: 100%;
-        font-size: 100%;
-    }
-
-    option {
-        width: 100%;
-        font-size: 100%;
-    }
-
-    select.enchant_name {
-        width: 65%;
-    }
-
-    select.enchant_lv {
-        text-align: center;
-        width: 10%;
-    }
-
-    select.enchant_remove {
-        width: 10%;
-    }
-
-    textarea {
-        width: 100%;
-        min-height: 100px;
+    .section.no-padding {
+        padding: 0px;
     }
 
     .plus-sign {
-        display: inline-flex;
-        align-items: center;
+        margin: auto;
+        text-align: center;
         justify-content: center;
-        width: 100%;
+        width: auto;
+        font-size: 2em;
+        color: white;
+        padding: 0px;
+        margin: 0px;
     }
 
-    .flex {
-        display: flex;
+    label {
+        font-size: 60%;
+    }
+
+    input[type='number'] {
+        margin-left: 10px;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
     }
 }
 
 /* Desktop */
 @media only screen and (min-width: 768px) {
+    body {
+        display: flex;
+    }
+    .nav-main {
+        width: 70%;
+    }
+
+    .nav-side {
+        width: 30%;
+    }
+
     .flex-wrapper {
         display: flex;
     }
 
     .section {
         display: block;
+        margin: 10px;
+        width: auto;
+    }
+
+    .section.full-width {
         width: 100%;
-        margin: 5px;
-        padding: 10px;
-        color: white;
     }
 
     button:hover:not(.enchant_remove) {
@@ -186,11 +224,13 @@ input[type='number'] {
     .plus-sign {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+
         width: 5%;
+        font-size: 2em;
+        color: white;
     }
 
-    .flex {
-        display: flex;
+    .big-text {
+        font-size: 1.25em;
     }
 }

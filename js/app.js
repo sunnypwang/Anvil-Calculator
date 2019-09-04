@@ -52,16 +52,17 @@ function addEnchant() {
                 .val()
         )
     }
-    console.log(selectedNames)
 
     // Add applicable enchantment list
     for (name of applicable_enchant[tool_type]) {
-        $(this)
-            .parent()
-            .siblings('.enchant')
-            .children(`.enchant_${total_enchant}`)
-            .children('.enchant_name')
-            .append($(`<option>${name}</option>`))
+        if (!selectedNames.includes(name)) {
+            $(this)
+                .parent()
+                .siblings('.enchant')
+                .children(`.enchant_${total_enchant}`)
+                .children('.enchant_name')
+                .append($(`<option>${name}</option>`))
+        }
     }
 
     function getLevelOption(name) {
@@ -74,8 +75,8 @@ function addEnchant() {
         return optionHtml
     }
 
-    // Add applicable enchantment level (First time only)
-    let first_name = $(this)
+    // Add applicable enchantment level for new enchantment
+    let enchant_name = $(this)
         .parent()
         .siblings('.enchant')
         .children(`.enchant_${total_enchant}`)
@@ -86,9 +87,9 @@ function addEnchant() {
         .siblings('.enchant')
         .children(`.enchant_${total_enchant}`)
         .children('.enchant_lv')
-        .html(getLevelOption(first_name))
+        .html(getLevelOption(enchant_name))
 
-    // Update applicable enchantment level everytime enchantment name is changed
+    // Create event that update applicable enchantment level everytime enchantment name is changed
     $(this)
         .parent()
         .siblings('.enchant')

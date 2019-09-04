@@ -19,21 +19,24 @@
         </title>
     </head>
 
-    <body>
-        <div class="flex-wrapper">
-            <div class="section bgcolor" id="target">
-                Target
-                <span class="right"
-                    ><label>Prior Work Penalty</label
-                    ><input
-                        id="target_penalty"
-                        type="number"
-                        placeholder="0"
-                        min="0"
-                        max="6"
-                /></span>
+    <body class="flex-wrapper">
+        <div class="nav-main flex-wrapper">
+            <div class="section full-width bgcolor" id="target">
+                <div class="container">
+                    <span class="left big-text">Target</span>
+                    <span class="right"
+                        ><label>Prior Work Penalty</label
+                        ><input
+                            id="target_penalty"
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                            max="6"
+                    /></span>
+                </div>
+
                 <div class="container type">
-                    <select>
+                    <select class="big-text">
                         <option value="Sword">Sword</option>
                         <option value="Axe">Axe</option>
                         <option value="Pickaxe">Pickaxe</option>
@@ -56,19 +59,22 @@
 
                 <div class="container enchant"></div>
             </div>
-            <span class="plus-sign">+</span>
-            <div class="section bgcolor" id="sacrifice">
-                Sacrifice<span class="right"
-                    ><label>Prior Work Penalty</label
-                    ><input
-                        id="sacrifice_penalty"
-                        type="number"
-                        placeholder="0"
-                        min="0"
-                        max="6"
-                /></span>
+            <div class="section no-padding plus-sign">+</div>
+            <div class="section full-width bgcolor" id="sacrifice">
+                <div class="container">
+                    <span class="left big-text">Sacrifice</span>
+                    <span class="right"
+                        ><label>Prior Work Penalty</label
+                        ><input
+                            id="sacrifice_penalty"
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                            max="6"
+                    /></span>
+                </div>
                 <div class="container type">
-                    <select>
+                    <select class="big-text">
                         <option value="Sword">Sword</option>
                         <option value="Axe">Axe</option>
                         <option value="Pickaxe">Pickaxe</option>
@@ -91,23 +97,29 @@
                 <div class="container enchant"></div>
             </div>
         </div>
-        <div class="section">
-            <div class="container">
-                <input id="swapTool" type="checkbox" />Swap Tool
+        <div class="nav-side">
+            <div class="section">
+                <div class="container big-text">
+                    <input id="swapTool" type="checkbox" />Swap Tool
+                </div>
             </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <button class="findCost big">Find Cost</button>
+            <div class="section">
+                <div class="container">
+                    <button class="findCost big">Find Cost</button>
+                </div>
             </div>
-        </div>
-        <div class="section">
-            <h2 id="total_cost">Cost :</h2>
-            <p>Result Tool Enchantments</p>
-            <p id="result_tool"></p>
-        </div>
-        <div class="section">
-            <textarea readonly id="log"></textarea>
+            <div class="section center">
+                <h2 id="total_cost">Cost :</h2>
+                <p id="result_tool"></p>
+            </div>
+            <div class="section center">
+                <textarea
+                    readonly
+                    rows="6"
+                    id="log"
+                    placeholder="Log Text"
+                ></textarea>
+            </div>
         </div>
     </body>
 </html>
