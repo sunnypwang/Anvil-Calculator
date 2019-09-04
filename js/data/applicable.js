@@ -1,12 +1,12 @@
 applicable_enchant = {
     Sword: [
-        'Fire Aspect',
-        'Looting',
-        'Unbreaking',
         'Sharpness',
         'Smite',
         'Bane of Arthropods',
         'Knockback',
+        'Fire Aspect',
+        'Looting',
+        'Unbreaking',
         'Mending',
         'Curse of Vanishing',
         'Sweeping Edge'
@@ -20,69 +20,69 @@ applicable_enchant = {
         'Curse of Vanishing'
     ],
     Axe: [
+        'Efficiency',
         'Fortune',
         'Silk Touch',
-        'Efficiency',
-        'Unbreaking',
         'Sharpness',
         'Smite',
         'Bane of Arthropods',
+        'Unbreaking',
         'Mending',
         'Curse of Vanishing'
     ],
     Shovel: [
+        'Efficiency',
         'Fortune',
         'Silk Touch',
-        'Efficiency',
         'Unbreaking',
         'Mending',
         'Curse of Vanishing'
     ],
     Helmet: [
+        'Protection',
         'Fire Protection',
         'Projectile Protection',
         'Blast Protection',
-        'Protection',
-        'Unbreaking',
         'Respiration',
         'Aqua Affinity',
         'Thorns',
+        'Unbreaking',
         'Mending',
         'Curse of Binding',
         'Curse of Vanishing'
     ],
     Chestplate: [
+        'Protection',
         'Fire Protection',
         'Projectile Protection',
         'Blast Protection',
-        'Protection',
-        'Unbreaking',
         'Thorns',
+        'Unbreaking',
         'Mending',
         'Curse of Binding',
         'Curse of Vanishing'
     ],
     Leggings: [
+        'Protection',
         'Fire Protection',
         'Projectile Protection',
         'Blast Protection',
-        'Protection',
-        'Unbreaking',
         'Thorns',
+        'Unbreaking',
         'Mending',
         'Curse of Binding',
         'Curse of Vanishing'
     ],
     Boots: [
+        'Protection',
         'Fire Protection',
         'Projectile Protection',
         'Blast Protection',
-        'Protection',
-        'Unbreaking',
         'Feather Falling',
-        'Thorns',
         'Frost Walker',
         'Depth Strider',
+        'Thorns',
+        'Unbreaking',
         'Mending',
         'Curse of Binding',
         'Curse of Vanishing'
@@ -97,8 +97,8 @@ applicable_enchant = {
         'Curse of Vanishing'
     ],
     Crossbow: [
-        'Multishot',
         'Piercing',
+        'Multishot',
         'Quick Charge',
         'Unbreaking',
         'Mending',

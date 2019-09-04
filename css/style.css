@@ -1,0 +1,176 @@
+/* The font file in this archive was created by Andrew Tyler www.AndrewTyler.net and font@andrewtyler.net
+License: http://creativecommons.org/licenses/by-sa/3.0/us/
+
+Use at 12 or 24 px size with anti-alising off for best results.
+
+Creative Commons BY-SA license.
+
+Not affiliated or endorsed by Mojang in anyway.  */
+
+@font-face {
+    font-family: 'minecraftia';
+    src: url('font/Minecraftia.ttf');
+}
+
+* {
+    font-family: 'minecraftia', monospace;
+    /* font-size: 1em; */
+}
+
+button:not(.enchant_remove) {
+    width: 60%;
+    padding: 0.5em;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    box-shadow: -3px -3px rgba(0, 0, 0, 0.4) inset,
+        3px 3px rgba(255, 255, 255, 0.4) inset;
+    background-color: gray;
+    background-image: url('res/buttonTexture.png');
+    color: white;
+    text-shadow: 3px 3px rgb(30, 30, 30);
+}
+
+button.enchant_remove {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 1.5em;
+}
+
+button.big {
+    font-size: 1.5em;
+}
+
+body {
+    background-color: darkgray;
+}
+
+h2 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+input[type='checkbox'] {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5em;
+}
+
+.section.bgcolor {
+    background-color: rgb(80, 80, 80);
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+    .section {
+        display: block;
+        width: auto;
+        margin: 10px;
+        padding: 10px;
+        color: white;
+        /* border-style: solid;
+        border-color: red; */
+    }
+
+    .container {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+        /* align-items: center; */
+        /* justify-content: center; */
+        width: auto;
+        /* padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px; */
+        /* border-style: solid;
+        border-color: black; */
+    }
+
+    .button-container {
+        text-align: center;
+        /* margin: auto; */
+    }
+
+    .block {
+        display: block;
+    }
+
+    select {
+        -o-appearance: none;
+        -ms-appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 0.2em;
+        /* text-align: center; */
+        width: 100%;
+        font-size: 100%;
+    }
+
+    option {
+        width: 100%;
+        font-size: 100%;
+    }
+
+    select.enchant_name {
+        width: 65%;
+    }
+
+    select.enchant_lv {
+        text-align: center;
+        width: 10%;
+    }
+
+    select.enchant_remove {
+        width: 10%;
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 100px;
+    }
+
+    span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+    .flex {
+        display: flex;
+    }
+
+    .section {
+        display: block;
+        width: 100%;
+        margin: 5px;
+        padding: 10px;
+        color: white;
+    }
+
+    button:hover:not(.enchant_remove) {
+        background-image: url('res/buttonHover.png');
+    }
+
+    span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 5%;
+    }
+}

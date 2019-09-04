@@ -24,6 +24,11 @@ function findCost() {
     target = getTool('target')
     sacrifice = getTool('sacrifice')
 
+    if ($('#swapTool').is(':checked')) {
+        target = getTool('sacrifice')
+        sacrifice = getTool('target')
+    }
+
     total_cost = 0
 
     // For each enchantment on the sacrifice:
@@ -74,8 +79,7 @@ function findCost() {
                 //If sacrifice level is equal, the target gains one level, unless it is already at the maximum level for that enchantment.
                 if (target.enchantments[name] == sacrifice.enchantments[name]) {
                     target.enchantments[name] = Math.min(
-                        parseInt(target.enchantments[name], 10) +
-                            parseInt(1, 10),
+                        target.enchantments[name] + 1,
                         enchant_list[name].max
                     )
                 }
@@ -121,5 +125,7 @@ function findCost() {
     $('#log').append(total_cost)
     $('#log').append('\n')
 
-    document.getElementById('cost').innerText = total_cost
+    // console.log(target)
+
+    return [total_cost, target]
 }
