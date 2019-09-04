@@ -107,10 +107,11 @@ function findCost() {
             cost = multiplier * target.enchantments[name]
             total_cost += cost
             $('#log').append(
-                'Result: ' +
-                    name +
+                name +
                     ' ' +
                     target.enchantments[name] +
+                    '. Multiplier: ' +
+                    multiplier +
                     '. Cost: ' +
                     cost
             )
@@ -120,6 +121,26 @@ function findCost() {
         // $('#log').append('Total cost: ' + total_cost)
         // $('#log').append('\n')
     }
+
+    //Calculate Penalty cost
+    let target_penalty = target.prior_penalty
+    let sacrifice_penalty = sacrifice.prior_penalty
+    let new_penalty = Math.max(target_penalty, sacrifice_penalty)
+    target.prior_penalty = new_penalty + 1
+
+    let target_penalty_cost = Math.pow(2, target_penalty) - 1
+    let sacrifice_penalty_cost = Math.pow(2, sacrifice_penalty) - 1
+    let total_penalty_cost = target_penalty_cost + sacrifice_penalty_cost
+    total_cost += total_penalty_cost
+    $('#log').append(
+        'Penalty Cost: ' +
+            target_penalty_cost +
+            ' + ' +
+            sacrifice_penalty_cost +
+            ' = ' +
+            total_penalty_cost
+    )
+    $('#log').append('\n')
 
     $('#log').append('Final Cost: ')
     $('#log').append(total_cost)

@@ -68,6 +68,21 @@ input[type='checkbox'] {
     background-color: rgb(80, 80, 80);
 }
 
+label {
+    width: auto;
+    font-size: 60%;
+    color: lightgray;
+}
+
+input[type='number'] {
+    margin-left: 10px;
+    width: auto;
+}
+
+.right {
+    float: right;
+}
+
 /* Mobile */
 @media only screen and (max-width: 768px) {
     .section {
@@ -89,15 +104,12 @@ input[type='checkbox'] {
         /* align-items: center; */
         /* justify-content: center; */
         width: auto;
-        /* padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 10px;
-        padding-right: 10px; */
+
         /* border-style: solid;
         border-color: black; */
     }
 
-    .button-container {
+    .center {
         text-align: center;
         /* margin: auto; */
     }
@@ -141,17 +153,21 @@ input[type='checkbox'] {
         min-height: 100px;
     }
 
-    span {
+    .plus-sign {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 100%;
     }
+
+    .flex {
+        display: flex;
+    }
 }
 
 /* Desktop */
 @media only screen and (min-width: 768px) {
-    .flex {
+    .flex-wrapper {
         display: flex;
     }
 
@@ -167,10 +183,14 @@ input[type='checkbox'] {
         background-image: url('res/buttonHover.png');
     }
 
-    span {
+    .plus-sign {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 5%;
+    }
+
+    .flex {
+        display: flex;
     }
 }

@@ -1,10 +1,15 @@
 $(document).ready(function() {
     $('.addEnchantBtn').click(addEnchant)
     $('.type').change(function() {
-        console.log('B')
-        $(this)
-            .siblings('.enchant')
-            .html('')
+        if (
+            $(this)
+                .children('select')
+                .val() != 'Book'
+        ) {
+            $(this)
+                .siblings('.enchant')
+                .html('')
+        }
     })
     $('.findCost').click(setFinalCost)
 })
@@ -110,7 +115,7 @@ function getTool(which) {
     tool = {
         type: $(`#${which} > .type > select`).val(),
         enchantments: {},
-        prior_penalty: 0
+        prior_penalty: Number($(`#${which}_penalty`).val())
     }
 
     for (i = 0; i < $(`#${which} > .enchant`).children().length; i += 1) {
