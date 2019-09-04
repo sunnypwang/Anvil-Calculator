@@ -113,6 +113,13 @@ applicable_enchant = {
         'Mending',
         'Curse of Vanishing'
     ],
+    'Fishing Rod': [
+        'Lure',
+        'Luck of the Sea',
+        'Unbreaking',
+        'Mending',
+        'Curse of Vanishing'
+    ],
     Book: [
         'Protection',
         'Fire Protection',
