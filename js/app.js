@@ -107,9 +107,13 @@ function addEnchant() {
 }
 
 function removeEnchant() {
-    $(this)
-        .parent()
-        .remove()
+    const enchant = $(this).parent();
+    const enchantments = enchant.parent();
+    enchant.remove();
+    //re-create enchantments index
+    enchantments.children().each((i, elem) => {
+        $(elem).attr('class', `enchant_${i}`);
+    });
 }
 
 function getTool(which) {
