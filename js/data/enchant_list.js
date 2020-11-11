@@ -183,5 +183,10 @@ var enchant_list = {
         max: 3,
         mul_item: 4,
         mul_book: 2
+    },
+    'Soul Speed': {
+        max: 3,
+        mul_item: 8,
+        mul_book: 4
     }
 }

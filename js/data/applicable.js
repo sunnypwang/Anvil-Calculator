@@ -85,7 +85,8 @@ applicable_enchant = {
         'Unbreaking',
         'Mending',
         'Curse of Binding',
-        'Curse of Vanishing'
+        'Curse of Vanishing',
+        'Soul Speed'
     ],
     Bow: [
         'Power',
@@ -157,6 +158,7 @@ applicable_enchant = {
         'Multishot',
         'Piercing',
         'Quick Charge',
-        'Sweeping Edge'
+        'Sweeping Edge',
+        'Soul Speed'
     ]
 }
