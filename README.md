@@ -14,3 +14,6 @@ Anvil mechanics derived from https://minecraft.gamepedia.com/Anvil_mechanics
 - Display total XP cost including the result tool after combining
 - A log displaying calculation breakdown for each enchantment
 - Responsive design!
+
+
+I did nothing except add Soul Speed to the table
