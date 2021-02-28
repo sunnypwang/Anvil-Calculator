@@ -16,4 +16,4 @@ Anvil mechanics derived from https://minecraft.gamepedia.com/Anvil_mechanics
 - Responsive design!
 
 
-I did nothing except add Soul Speed to the table
+Thanks to klaimmore for bug fixing and MYCRAFTisbest for adding Soul Speed enchantment
