@@ -165,5 +165,13 @@ applicable_enchant = {
         'Unbreaking',
         'Mending',
         'Curse of Vanishing'
+    ],
+    Hoe: [
+        'Efficiency',
+        'Fortune',
+        'Unbreaking',
+        'Silk Touch',
+        'Mending',
+        'Curse of Vanishing'
     ]
 }
