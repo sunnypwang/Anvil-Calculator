@@ -160,5 +160,10 @@ applicable_enchant = {
         'Quick Charge',
         'Sweeping Edge',
         'Soul Speed'
+    ],
+    Shield: [
+        'Unbreaking',
+        'Mending',
+        'Curse of Vanishing'
     ]
 }
