@@ -144,6 +144,10 @@ select.enchant_remove {
     display: flex;
 }
 
+.hover {
+    border-bottom: 2px dotted white;
+}
+
 #total_cost {
     color: greenyellow;
     font-size: 2em;
