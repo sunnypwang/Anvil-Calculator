@@ -15,5 +15,10 @@ Anvil mechanics derived from https://minecraft.gamepedia.com/Anvil_mechanics
 - A log displaying calculation breakdown for each enchantment
 - Responsive design!
 
+## Changelog
+```
+V1.1 - Redesign UI/UX for simpler use 
+```
+
 
 Thanks to klaimmore for bug fixing and MYCRAFTisbest for adding Soul Speed enchantment
