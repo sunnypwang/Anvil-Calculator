@@ -14,9 +14,7 @@
         <link href="css/font/Minecraftia.ttf" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="icon" href="favicon.png" />
-        <title>
-            Anvil Calculator
-        </title>
+        <title>Anvil Calculator</title>
     </head>
 
     <body class="flex-wrapper">
@@ -24,8 +22,14 @@
             <div class="section full-width bgcolor" id="target">
                 <div class="container">
                     <span class="left big-text">Target</span>
+                    <span class="left">
+                        <input id="target-damaged" type="checkbox" />Damaged
+                    </span>
                     <span class="right"
-                        ><label>Prior Work Penalty</label
+                        ><label
+                            class="hover"
+                            title="How many times the tool has been used on an Anvil before"
+                            >Prior Work Penalty</label
                         ><input
                             id="target_penalty"
                             type="number"
@@ -36,30 +40,8 @@
                 </div>
 
                 <div class="container type">
-                    <select class="big-text">
-                        <option value="Sword">Sword</option>
-                        <option value="Axe">Axe</option>
-                        <option value="Pickaxe">Pickaxe</option>
-                        <option value="Shovel">Shovel</option>
-                        <option value="Helmet">Helmet</option>
-                        <option value="Chestplate">Chestplate</option>
-                        <option value="Leggings">Leggings</option>
-                        <option value="Boots">Boots</option>
-                        <option value="Bow">Bow</option>
-                        <option value="Crossbow">Crossbow</option>
-                        <option value="Shield">Shield</option>
-                        <option value="Trident">Trident</option>
-                        <option value="Fishing Rod">Fishing Rod</option>
-                        <option value="Hoe">Hoe</option>
-                        <option value="Book">Book</option>
-                    </select>
+                    <select class="big-text"></select>
                 </div>
-                <div class="container ">
-                    <button class="addEnchantBtn">
-                        Add Enchantment
-                    </button>
-                </div>
-
                 <div class="container enchant"></div>
             </div>
             <div class="section no-padding plus-sign">+</div>
@@ -67,7 +49,10 @@
                 <div class="container">
                     <span class="left big-text">Sacrifice</span>
                     <span class="right"
-                        ><label>Prior Work Penalty</label
+                        ><label
+                            class="hover"
+                            title="How many times the tool has been used on an Anvil before"
+                            >Prior Work Penalty</label
                         ><input
                             id="sacrifice_penalty"
                             type="number"
@@ -77,41 +62,23 @@
                     /></span>
                 </div>
                 <div class="container type">
-                    <select class="big-text">
-                        <option value="Sword">Sword</option>
-                        <option value="Axe">Axe</option>
-                        <option value="Pickaxe">Pickaxe</option>
-                        <option value="Shovel">Shovel</option>
-                        <option value="Helmet">Helmet</option>
-                        <option value="Chestplate">Chestplate</option>
-                        <option value="Leggings">Leggings</option>
-                        <option value="Boots">Boots</option>
-                        <option value="Bow">Bow</option>
-                        <option value="Crossbow">Crossbow</option>
-                        <option value="Shield">Shield</option>
-                        <option value="Trident">Trident</option>
-                        <option value="Fishing Rod">Fishing Rod</option>
-                        <option value="Hoe">Hoe</option>
-                        <option value="Book">Book</option>
-                    </select>
-                </div>
-                <div class="container">
-                    <button class="addEnchantBtn">
-                        Add Enchantment
-                    </button>
+                    <select class="big-text"></select>
                 </div>
                 <div class="container enchant"></div>
             </div>
         </div>
         <div class="nav-side">
             <div class="section">
-                <div class="container big-text">
-                    <input id="swapTool" type="checkbox" />Swap Tool
+                <div class="container center big-text">
+                    <input id="syncTool" type="checkbox" checked/><span class="hover" title="Change both tools">Sync</span>
+                </div>
+                <div class="container center big-text">
+                    <input id="swapTool" type="checkbox" /><span class="hover" title="Swap target and sacrifice">Swap</span>
                 </div>
             </div>
             <div class="section">
-                <div class="container">
-                    <button class="findCost big">Find Cost</button>
+                <div class="container center">
+                    <button id="findCostBtn" class="big">Enchant!</button>
                 </div>
             </div>
             <div class="section center">
