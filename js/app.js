@@ -1,24 +1,34 @@
 $(document).ready(function () {
     for (tool in applicable_enchant) {
-        $(".type")
-            .children()
-            .append(`<option value="${tool}">${tool}</option>`);
+        $(".type select").append(`<option value="${tool}">${tool}</option>`);
     }
     $("#findCostBtn").click(setResult);
     $(".type").change(setEnchantList).trigger("change");
 });
 
+function updateEnchantList(enchantListObj){
+    enchantListObj.html("");
+    applicable_enchant[tool].forEach((enchant) => {
+        enchantListObj.append(getEnchantNode(enchant));
+    });
+}
+
 function setEnchantList() {
     tool = getToolName($(this));
-    $(this).siblings(".enchant").html("");
-    applicable_enchant[tool].forEach((enchant) => {
-        $(this).siblings(".enchant").append(getEnchantNode(enchant));
-    });
+    if ($("#syncTool").is(":checked")){
+        $(".type select").val(tool)
+        $(".type").each(function() {
+            updateEnchantList($(this).siblings(".enchant"))
+        })
+    } else {
+        updateEnchantList($(this).siblings(".enchant"))
+    }
+    
 }
 
 function getToolName(toolSelObject) {
     tool = toolSelObject.children("select").val();
-    console.log(tool);
+    // console.log(tool);
     return tool;
 }
 
