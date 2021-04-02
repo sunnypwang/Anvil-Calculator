@@ -142,6 +142,12 @@ function findCost() {
     )
     $('#log').append('\n')
 
+    //Calculate Repair cost
+    if ($('#target-damaged').is(':checked') && target.type == sacrifice.type){
+        total_cost += 2
+        $('#log').append('Repair Cost: 2\n')
+    }
+
     $('#log').append('Final Cost: ')
     $('#log').append(total_cost)
     $('#log').append('\n')
