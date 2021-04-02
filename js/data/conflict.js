@@ -1,15 +1,22 @@
-conflict = [
-    [
-        "Protection",
-        "Fire Protection",
-        "Blast Protection",
-        "Projectile Protection",
-    ],
-    ["Sharpness", "Bane of Arthropods", "Smite"],
-    ["Silk Touch", "Fortune"],
-    ["Depth Strider", "Frost Walker"],
-    ["Infinity", "Mending"],
-    ["Loyalty", "Riptide"],
-    ["Channeling", "Riptide"],
-    ["Multishot", "Piercing"],
-];
+//If two enchantment have the same number, they conflict with each other
+conflict_group = {
+    Protection: 0,
+    "Fire Protection": 0,
+    "Blast Protection": 0,
+    "Projectile Protection": 0,
+    Sharpness: 1,
+    "Bane of Arthropods": 1,
+    Smite: 1,
+    "Silk Touch": 2,
+    Fortune: 2,
+    "Depth Strider": 3,
+    "Frost Walker": 3,
+    Infinity: 4,
+    Mending: 4,
+    Loyalty: 5,
+    Riptide: 5,
+    Channeling: 6,
+    Riptide: 6,
+    Multishot: 7,
+    Piercing: 7,
+};
