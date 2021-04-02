@@ -121,6 +121,15 @@ applicable_enchant = {
         "Mending",
         "Curse of Vanishing",
     ],
+    Shield: ["Unbreaking", "Mending", "Curse of Vanishing"],
+    Hoe: [
+        "Efficiency",
+        "Fortune",
+        "Unbreaking",
+        "Silk Touch",
+        "Mending",
+        "Curse of Vanishing",
+    ],
     Book: [
         "Protection",
         "Fire Protection",
@@ -160,14 +169,5 @@ applicable_enchant = {
         "Quick Charge",
         "Sweeping Edge",
         "Soul Speed",
-    ],
-    Shield: ["Unbreaking", "Mending", "Curse of Vanishing"],
-    Hoe: [
-        "Efficiency",
-        "Fortune",
-        "Unbreaking",
-        "Silk Touch",
-        "Mending",
-        "Curse of Vanishing",
     ],
 };

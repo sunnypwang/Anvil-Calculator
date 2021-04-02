@@ -134,16 +134,6 @@ enchant_list = {
         mul_item: 4,
         mul_book: 2,
     },
-    "Curse of Binding": {
-        max: 1,
-        mul_item: 8,
-        mul_book: 4,
-    },
-    "Curse of Vanishing": {
-        max: 1,
-        mul_item: 8,
-        mul_book: 4,
-    },
     Impaling: {
         max: 5,
         mul_item: 2,
@@ -186,6 +176,16 @@ enchant_list = {
     },
     "Soul Speed": {
         max: 3,
+        mul_item: 8,
+        mul_book: 4,
+    },
+    "Curse of Binding": {
+        max: 1,
+        mul_item: 8,
+        mul_book: 4,
+    },
+    "Curse of Vanishing": {
+        max: 1,
         mul_item: 8,
         mul_book: 4,
     },
