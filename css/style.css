@@ -219,6 +219,12 @@ option {
     color: white;
 }
 
+footer {
+    font-size: x-small;
+    color:rgb(228, 228, 228);
+    text-align: end;
+}
+
 /* Mobile */
 @media only screen and (max-width: 1200px) {
 
