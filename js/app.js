@@ -1,40 +1,49 @@
 $(document).ready(function () {
     for (tool in applicable_enchant) {
-        $(".type select").append(`<option value="${tool}">${tool}</option>`);
+        $("#targetType").append(`<option value="${tool}">${tool}</option>`);
+        $("#sacrificeType").append(`<option value="${tool}">${tool}</option>`);
     }
     $("#findCostBtn").click(setResult);
-    $(".type").change(setEnchantList).trigger("change");
+    $("#targetType").change(selectEnchant).trigger("change");
+    $("#sacrificeType").change(selectEnchant).trigger("change");
 });
 
-function updateEnchantList(enchantListObj){
+function updateEnchantList(enchantListObj, tool){
     enchantListObj.html("");
+    console.log('>',    tool);
     applicable_enchant[tool].forEach((enchant) => {
         enchantListObj.append(getEnchantNode(enchant));
     });
 }
 
-function setEnchantList() {
-    tool = getToolName($(this));
-    if ($("#syncTool").is(":checked")){
-        $(".type select").val(tool)
-        $(".type").each(function() {
-            updateEnchantList($(this).siblings(".enchant"))
-        })
-    } else {
-        updateEnchantList($(this).siblings(".enchant"))
-    }
+function selectEnchant() {
+    var tool = $(this).val();
+    var elementId = getId(this);
+    var enchantElementId = getEnchantElementId(elementId);
+    console.log(elementId, $(elementId).val())
+    $(elementId).val(tool);
     
+    updateEnchantList($(enchantElementId), tool);
+
+    if ($("#syncTool").is(":checked")){
+
+        var otherElementId = getOtherToolelementId(elementId);
+        var otherEnchantElementId = getEnchantElementId(otherElementId);
+        console.log(elementId, enchantElementId, otherEnchantElementId)
+        $(otherElementId).val(tool);
+        updateEnchantList($(otherEnchantElementId),tool)
+    }
 }
 
-function getToolName(toolSelObject) {
-    tool = toolSelObject.children("select").val();
-    // console.log(tool);
-    return tool;
-}
+// function getToolName(toolSelObject) {
+//     tool = toolSelObject.children("select").val();
+//     // console.log(tool);
+//     return tool;
+// }
 
 function getEnchantNode(enchant) {
     maxLevel = enchant_list[enchant]["max"];
-    // console.log(maxLevel)
+    //  .log(maxLevel)
     levelButtonNode = ``;
     for (let index = 1; index <= maxLevel; index++) {
         levelButtonNode += `<button onclick=updateEnchantBtn(this) class="enchant_lv_button">${index}</button>`;
@@ -59,7 +68,7 @@ function updateEnchantBtn(button) {
 }
 
 function getEnchantments(tool) {
-    enchantments = {};
+    var enchantments = {};
     tool.children().each(function () {
         enchant = $(this).children(".enchant_name").text();
         level =
@@ -74,16 +83,25 @@ function getEnchantments(tool) {
 
 function getTool(id) {
     tool = {};
-    tool["type"] = $(`#${id} .type select`).val();
-    tool["enchantments"] = getEnchantments($(`#${id} .enchant`));
+    tool["type"] = $(`#${id}Type`).val();
+    tool["enchantments"] = getEnchantments($(`#${id}Enchant`));
     tool["prior_penalty"] = Number($(`#${id}_penalty`).val());
     console.log(tool);
     return tool;
 }
 
 function setResult() {
-    const [total_cost, result_tool] = findCost();
-    console.log(total_cost, result_tool);
+    var target = getTool("target");
+    var sacrifice = getTool("sacrifice");
+
+    if ($("#swapTool").is(":checked")) {
+        var target = getTool("sacrifice");
+        var sacrifice = getTool("target");
+    }
+    var isDamaged = $("#target-damaged").is(":checked") && target.type == sacrifice.type
+    console.log(isDamaged)
+    const [total_cost, result_tool] = findCost(target, sacrifice, isDamaged);
+    // console.log(total_cost, result_tool);
     $("#total_cost").text("Cost : " + total_cost);
 
     tool_summary_text = "";
@@ -100,4 +118,16 @@ function writeLog(msg) {
 
 function resetLog() {
     $("#log").text(""); // reset textarea
+}
+
+function getId(obj){
+    return '#' + obj.id
+}
+
+function getEnchantElementId(toolElementId){
+    return (toolElementId == '#targetType') ? '#targetEnchant' : '#sacrificeEnchant';
+}
+
+function getOtherToolelementId(toolElementId) {
+    return (toolElementId == '#targetType') ? '#sacrificeType' : '#targetType';
 }

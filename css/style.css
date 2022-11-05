@@ -17,9 +17,31 @@ Not affiliated or endorsed by Mojang in anyway.  */
     font-size: 1em;
 }
 
+input.chk-btn {
+    display: none;
+}
+
+input.chk-btn + label {
+    border: 1px solid grey;
+    background: rgb(102, 102, 102);
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+  }
+  input.chk-btn:not(:checked) + label:hover {
+    box-shadow: 0px 1px 3px;
+  }
+  input.chk-btn + label:active,
+  input.chk-btn:checked + label {
+
+    box-shadow: 0px 0px 3px inset;
+    background: rgb(142, 168, 237);
+  }
+
 button {
     width: auto;
-    padding: 0.5em;
+    padding: 0.5em 0;
     border-style: solid;
     border-width: 3px;
     border-color: black;
@@ -47,6 +69,16 @@ button.clicked {
 
 body {
     background-color: darkgray;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.type {
+    padding: 1em 0;
 }
 
 input[type="checkbox"] {
@@ -83,8 +115,8 @@ input[type="number"] {
 
 textarea {
     width: 100%;
-    min-height: 100px;
-    resize: none;
+    /* min-height: 100px; */
+    /* resize: none; */
 }
 
 select {
@@ -93,10 +125,11 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: 0.2em;
+    padding: 0.5em;
     /* text-align: center; */
     width: 100%;
     font-size: 100%;
+    text-align: center;
 }
 
 option {
@@ -135,8 +168,8 @@ option {
 
 .section {
     display: block;
-    width: auto;
-    padding: 10px;
+    width: 100%;
+    padding: 2em;
     color: white;
 }
 
@@ -145,10 +178,7 @@ option {
 }
 
 .container {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 2em;
     /* text-align: center; */
     /* align-items: center; */
     /* justify-content: center; */
@@ -157,6 +187,14 @@ option {
 
 .flex {
     display: flex;
+}
+
+.flex.vertical {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
 }
 
 .hover {
@@ -172,29 +210,34 @@ option {
     font-size: 1.3em;
 }
 
+.plus-sign {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    width: 5%;
+    font-size: 2em;
+    color: white;
+}
+
 /* Mobile */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
+
     .container {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 1px;
-        margin-right: 1px;
+        margin: 0.1em;
+    }
+
+    .section {
+        padding: 1em;
+    }
+
+    .flex {
+        flex-wrap: wrap;
     }
 
     .section.no-padding {
         padding: 0px;
     }
 
-    .plus-sign {
-        margin: auto;
-        text-align: center;
-        justify-content: center;
-        width: auto;
-        font-size: 2em;
-        color: white;
-        padding: 0px;
-        margin: 0px;
-    }
 
     label {
         font-size: 60%;
@@ -210,44 +253,26 @@ option {
 }
 
 /* Desktop */
-@media only screen and (min-width: 768px) {
-    body {
-        display: flex;
-    }
+@media only screen and (min-width: 1200px) {
+
     .nav-main {
         width: 70%;
     }
 
     .nav-side {
         width: 30%;
-    }
-
-    .flex-wrapper {
-        display: flex;
+        padding: 20px;
     }
 
     .section {
-        display: block;
-        margin: 10px;
-        width: auto;
-    }
-
-    .section.full-width {
-        width: 100%;
+        overflow: auto;
     }
 
     button:hover:not(.enchant_remove) {
         background-image: url("res/buttonHover.png");
     }
 
-    .plus-sign {
-        display: inline-flex;
-        align-items: center;
 
-        width: 5%;
-        font-size: 2em;
-        color: white;
-    }
 
     .big-text {
         font-size: 1.25em;

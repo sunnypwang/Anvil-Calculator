@@ -13,17 +13,9 @@ function hasConflict(enchant, enchantments) {
     return conflicts;
 }
 
-function findCost() {
+function findCost(target, sacrifice, isDamaged) {
+    console.log('findCost')
     resetLog();
-
-    target = getTool("target");
-    sacrifice = getTool("sacrifice");
-
-    if ($("#swapTool").is(":checked")) {
-        target = getTool("sacrifice");
-        sacrifice = getTool("target");
-    }
-
     total_cost = 0;
 
     // For each enchantment on the sacrifice:
@@ -38,6 +30,7 @@ function findCost() {
         // Add one level for every incompatible enchantment on the target (In Java Edition).
         conflicts = hasConflict(enchant, Object.keys(target.enchantments));
         console.log("conflicts", conflicts);
+
         if (conflicts && conflicts.length > 0) {
             writeLog(`${enchant} is incompatible with ${conflicts}! Cost: 1`);
             total_cost += 1;
@@ -99,7 +92,8 @@ function findCost() {
     );
 
     //Calculate Repair cost
-    if ($("#target-damaged").is(":checked") && target.type == sacrifice.type) {
+    if (isDamaged) {
+        console.log('is damaged')
         //Is it repairable
         total_cost += 2;
         writeLog("Repair Cost: 2");
