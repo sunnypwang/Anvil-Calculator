@@ -70,6 +70,7 @@ applicable_enchant = {
         "Thorns",
         "Unbreaking",
         "Mending",
+        "Swift Sneak",
         "Curse of Binding",
         "Curse of Vanishing",
     ],
@@ -168,6 +169,7 @@ applicable_enchant = {
         "Piercing",
         "Quick Charge",
         "Sweeping Edge",
+        "Swift Sneak",
         "Soul Speed",
     ],
 };
