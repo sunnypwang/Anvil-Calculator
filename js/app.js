@@ -6,11 +6,12 @@ $(document).ready(function () {
     $("#findCostBtn").click(setResult);
     $("#targetType").change(selectEnchant).trigger("change");
     $("#sacrificeType").change(selectEnchant).trigger("change");
+    $('#target-damaged').change(setResult); //For auto update
+    $('#swapTool').change(setResult); //For auto update
 });
 
 function updateEnchantList(enchantListObj, tool){
     enchantListObj.html("");
-    console.log('>',    tool);
     applicable_enchant[tool].forEach((enchant) => {
         enchantListObj.append(getEnchantNode(enchant));
     });
@@ -20,7 +21,7 @@ function selectEnchant() {
     var tool = $(this).val();
     var elementId = getId(this);
     var enchantElementId = getEnchantElementId(elementId);
-    console.log(elementId, $(elementId).val())
+    // console.log(elementId, $(elementId).val())
     $(elementId).val(tool);
     
     updateEnchantList($(enchantElementId), tool);
@@ -29,10 +30,14 @@ function selectEnchant() {
 
         var otherElementId = getOtherToolelementId(elementId);
         var otherEnchantElementId = getEnchantElementId(otherElementId);
-        console.log(elementId, enchantElementId, otherEnchantElementId)
+        // console.log(elementId, enchantElementId, otherEnchantElementId)
         $(otherElementId).val(tool);
         updateEnchantList($(otherEnchantElementId),tool)
     }
+    
+    //For auto update
+    $('button').click(setResult); 
+    setResult();
 }
 
 // function getToolName(toolSelObject) {
@@ -99,7 +104,7 @@ function setResult() {
         var sacrifice = getTool("target");
     }
     var isDamaged = $("#target-damaged").is(":checked") && target.type == sacrifice.type
-    console.log(isDamaged)
+    // console.log(isDamaged)
     const [total_cost, result_tool] = findCost(target, sacrifice, isDamaged);
     // console.log(total_cost, result_tool);
     $("#total_cost").text("Cost : " + total_cost);

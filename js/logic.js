@@ -93,7 +93,7 @@ function findCost(target, sacrifice, isDamaged) {
 
     //Calculate Repair cost
     if (isDamaged) {
-        console.log('is damaged')
+        // console.log('is damaged')
         //Is it repairable
         total_cost += 2;
         writeLog("Repair Cost: 2");
