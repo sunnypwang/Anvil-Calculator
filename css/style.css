@@ -130,7 +130,9 @@ select {
     width: 100%;
     font-size: 100%;
     text-align: center;
+    border-radius: 2px;
 }
+
 
 option {
     width: 100%;
@@ -139,6 +141,7 @@ option {
 
 .row {
     display: flex;
+    align-items: center;
 }
 
 .column-6 {
@@ -151,10 +154,6 @@ option {
 
 .enchant_name {
     padding: 0.2em;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    /* border-style: solid; */
 }
 
 .conflicting {
@@ -169,6 +168,7 @@ option {
 .section {
     display: block;
     width: 100%;
+    height: fit-content;
     padding: 2em;
     color: white;
 }
@@ -193,8 +193,9 @@ option {
     flex-direction: column;
 }
 
-.flex-center {
+.flex.flex-center {
     justify-content: center;
+    align-items: center;
 }
 
 .hover {
@@ -219,10 +220,27 @@ option {
     color: white;
 }
 
+.icon-wrapper {
+    height: 3em;
+    margin-right: 1em;
+}
+
+.tool-icon {
+    /* position: absolute; */
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1;
+    /* background-color: aqua; */
+}
+
 footer {
     font-size: x-small;
     color:rgb(228, 228, 228);
     text-align: end;
+}
+
+.flex.nowrap {
+    flex-wrap: nowrap;
 }
 
 /* Mobile */
@@ -244,6 +262,10 @@ footer {
         padding: 0px;
     }
 
+    .enchant_name {
+        font-size: smaller;
+    }
+    
 
     label {
         font-size: 60%;
@@ -256,6 +278,15 @@ footer {
         padding-top: 0.1em;
         padding-bottom: 0.1em;
     }
+
+    .column-6 {
+        flex: 50%;
+    }
+    
+    .column-4 {
+        flex: 50%;
+    }
+
 }
 
 /* Desktop */

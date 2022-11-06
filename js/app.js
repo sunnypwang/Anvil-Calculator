@@ -4,8 +4,8 @@ $(document).ready(function () {
         $("#sacrificeType").append(`<option value="${tool}">${tool}</option>`);
     }
     $("#findCostBtn").click(setResult);
-    $("#targetType").change(selectEnchant).trigger("change");
-    $("#sacrificeType").change(selectEnchant).trigger("change");
+    $("#targetType").change(() => {selectEnchant('target')}).trigger("change");
+    $("#sacrificeType").change(() => {selectEnchant('sacrifice')}).trigger("change");
     $('#target-damaged').change(setResult); //For auto update
     $('#swapTool').change(setResult); //For auto update
 });
@@ -17,24 +17,27 @@ function updateEnchantList(enchantListObj, tool){
     });
 }
 
-function selectEnchant() {
-    var tool = $(this).val();
-    var elementId = getId(this);
-    var enchantElementId = getEnchantElementId(elementId);
-    // console.log(elementId, $(elementId).val())
-    $(elementId).val(tool);
-    
-    updateEnchantList($(enchantElementId), tool);
+function selectEnchant(side) {
+    console.log('test')
+    var id = `#${side}Type`
+    var enchantId = `#${side}Enchant`
+    var iconId = `#${side}Icon`
+    var tool = $(id).val();
+    console.log(side, id, enchantId)
+    $(id).val(tool);
+    updateEnchantList($(enchantId), tool);
+    setIcon(iconId, tool);
 
     if ($("#syncTool").is(":checked")){
-
-        var otherElementId = getOtherToolelementId(elementId);
-        var otherEnchantElementId = getEnchantElementId(otherElementId);
-        // console.log(elementId, enchantElementId, otherEnchantElementId)
-        $(otherElementId).val(tool);
-        updateEnchantList($(otherEnchantElementId),tool)
+        var otherSide = (side == 'target') ? 'sacrifice' : 'target';
+        var otherId = `#${otherSide}Type`
+        var otherEnchantId = `#${otherSide}Enchant`
+        var otherIconId = `#${otherSide}Icon`
+        $(otherId).val(tool);
+        updateEnchantList($(otherEnchantId), tool);
+        setIcon(otherIconId, tool);
     }
-    
+
     //For auto update
     $('button').click(setResult); 
     setResult();
@@ -117,22 +120,21 @@ function setResult() {
     $("#result_tool").html(tool_summary_text);
 }
 
+function setIcon(iconId, toolName){
+    // console.log(toolName);
+    var url = `./css/res/${toolName}.png`
+    $(iconId).attr('src',url);
+    $(iconId).click((evt) => {
+        evt.stopImmediatePropagation();
+        console.log('hi',iconId)
+        // $('#targetType').trigger('selected')
+    });
+}
+
 function writeLog(msg) {
     $("#log").append(msg + "\n");
 }
 
 function resetLog() {
     $("#log").text(""); // reset textarea
-}
-
-function getId(obj){
-    return '#' + obj.id
-}
-
-function getEnchantElementId(toolElementId){
-    return (toolElementId == '#targetType') ? '#targetEnchant' : '#sacrificeEnchant';
-}
-
-function getOtherToolelementId(toolElementId) {
-    return (toolElementId == '#targetType') ? '#sacrificeType' : '#targetType';
 }
