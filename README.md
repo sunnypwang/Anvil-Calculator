@@ -17,8 +17,12 @@ Anvil mechanics derived from https://minecraft.gamepedia.com/Anvil_mechanics
 
 ## Changelog
 ```
-V1.1 - Redesign UI/UX for simpler use 
+V1.2 - Enabled auto-update (no need to manually click Enchant button)
+V1.1 - Redesigned UI/UX for simpler use 
 ```
 
 
-Thanks to klaimmore for bug fixing and MYCRAFTisbest for adding Soul Speed enchantment
+Special Thanks
+- klaimmore for bug fixing
+- MYCRAFTisbest for adding Soul Speed
+- papaia for addign Swift Sneak
