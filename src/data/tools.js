@@ -49,7 +49,11 @@ export const applicableEnchants = {
     ],
     Mace: [
         "Density", "Breach", "Wind Burst", "Smite", "Bane of Arthropods", "Fire Aspect",
-        "Unbreaking", "Mending", "Curse of Vanishing",
+        "Unbreaking", "Mending", "Curse of Vanishing"
+    ],
+    Spear: [
+        "Unbreaking", "Smite", "Sharpness", "Mending", "Lunge",
+        "Looting", "Knockback", "Fire Aspect", "Curse of Vanishing", "Bane of Arthropods",
     ],
     Book: [
         "Protection", "Fire Protection", "Feather Falling", "Blast Protection", "Projectile Protection",
@@ -59,5 +63,6 @@ export const applicableEnchants = {
         "Curse of Binding", "Curse of Vanishing", "Impaling", "Riptide", "Loyalty", "Channeling",
         "Multishot", "Piercing", "Quick Charge", "Sweeping Edge", "Swift Sneak", "Soul Speed",
         "Density", "Breach", "Wind Burst",
+        "Lunge"
     ],
 };

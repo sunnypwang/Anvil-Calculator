@@ -44,4 +44,6 @@ export const enchantList = {
     Breach: { max: 4, mul_item: 4, mul_book: 2 }, // Rare? Checking wiki: Breach is rare (double cost usually?) No, wait. 
     // Wiki: Density is 2 (item) / 1 (book). Breach is 4 (item) / 2 (book). Wind Burst is 8 (item) / 4 (book) (Very Rare).
     "Wind Burst": { max: 3, mul_item: 8, mul_book: 4 },
+    // Spear Enchantment
+    Lunge: { max: 3, mul_item: 4, mul_book: 2 },
 };
