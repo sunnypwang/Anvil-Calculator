@@ -225,11 +225,36 @@ button {
   color: var(--text-muted);
 }
 
-.penalty-input {
-  width: 50px;
-  text-align: center;
-  background: var(--bg-app);
-  border-color: var(--border-light);
+
+
+.penalty-slider {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 6px;
+  background: var(--bg-input);
+  border-radius: 3px;
+  border: 1px solid var(--border-light);
+  outline: none;
+  cursor: pointer;
+}
+
+.penalty-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  cursor: pointer;
+  border: 2px solid var(--bg-panel);
+}
+
+.penalty-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  cursor: pointer;
+  border: 2px solid var(--bg-panel);
 }
 
 /* Enchantment List */

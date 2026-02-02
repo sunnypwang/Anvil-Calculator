@@ -15,16 +15,19 @@ export default function ToolSelect({ side, tool, onToolChange, onPenaltyChange }
         <div className="tool-select-container">
             <div className="tool-select-header">
                 {/* Penalty Input moved to header for better layout */}
-                <div className="penalty-input-group" title="Prior Work Penalty">
-                    <span>Penalty:</span>
-                    <input
-                        className="penalty-input"
-                        type="number"
-                        value={tool.prior_penalty}
-                        onChange={(e) => onPenaltyChange(Math.max(0, parseInt(e.target.value) || 0))}
-                        min="0"
-                        max="39"
-                    />
+                <div className="penalty-input-group" title="How many times this tool has been used in an Anvil">
+                    <span style={{ cursor: 'help', borderBottom: '1px dotted var(--text-muted)' }}>Penalty:</span>
+                    <div className="flex items-center gap-2">
+                        <input
+                            className="penalty-slider"
+                            type="range"
+                            value={tool.prior_penalty}
+                            onChange={(e) => onPenaltyChange(parseInt(e.target.value))}
+                            min="0"
+                            max="5"
+                        />
+                        <span style={{ minWidth: '1.5rem', textAlign: 'center' }}>{tool.prior_penalty}</span>
+                    </div>
                 </div>
             </div>
 
