@@ -52,8 +52,8 @@ export const applicableEnchants = {
         "Unbreaking", "Mending", "Curse of Vanishing"
     ],
     Spear: [
-        "Unbreaking", "Smite", "Sharpness", "Mending", "Lunge",
-        "Looting", "Knockback", "Fire Aspect", "Curse of Vanishing", "Bane of Arthropods",
+        "Sharpness", "Smite", "Bane of Arthropods", "Unbreaking", "Mending", "Lunge",
+        "Looting", "Knockback", "Fire Aspect", "Curse of Vanishing",
     ],
     Book: [
         "Protection", "Fire Protection", "Feather Falling", "Blast Protection", "Projectile Protection",
