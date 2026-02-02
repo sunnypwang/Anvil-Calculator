@@ -1,93 +1,19 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> -->
-    <script src="js/data/conflict.js"></script>
-    <script src="js/data/applicable.js"></script>
-    <script src="js/data/enchant_list.js"></script>
-    <script src="js/logic.js"></script>
-    <script src="js/app.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet" />
-    <link href="css/font/Minecraftia.ttf" rel="stylesheet" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
-
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="icon" href="favicon.png" />
-    <title>Anvil Calculator</title>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anvil Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container flex">
-        <div class="nav-main">
-            <div class="flex flex-center">
-                <div class="section  bgcolor" id="target">
-                    <div class="header">
-                        <div>
-                            <span class="left big-text">Target</span>
-                            <!-- <span class="left">
-                                        <input id="target-damaged" type="checkbox" class="chk-btn" /><label for="target-damaged">Damaged</label>
-                                    </span> -->
-                        </div>
-                        <span class="right"><label class="hover"
-                                title="How many times the tool has been used on an Anvil before">Prior Work
-                                Penalty</label><input id="target_penalty" type="number" placeholder="0" min="0"
-                                max="6" /></span>
-                    </div>
-                    <div class="flex flex-center type nowrap">
-                        <div class="icon-wrapper"><img id="targetIcon" class="tool-icon"></div>
-                        <select id="targetType" class="big-text"></select>
-                    </div>
-                    <div id="targetEnchant" class="enchant"></div>
-                </div>
-                <div class="plus-sign">+</div>
-                <div class="section  bgcolor" id="sacrifice">
-                    <div class="">
-                        <div class="header">
-                            <div><span class="left big-text">Sacrifice</span></div>
-                            <span class="right"><label class="hover"
-                                    title="How many times the tool has been used on an Anvil before">Prior Work
-                                    Penalty</label><input id="sacrifice_penalty" type="number" placeholder="0" min="0"
-                                    max="6" /></span>
-                        </div>
-                    </div>
-                    <div class="flex flex-center type nowrap">
-                        <div class="icon-wrapper"><img id="sacrificeIcon" class="tool-icon"></div>
-                        <select id="sacrificeType" class="big-text"></select>
-                    </div>
-                    <div id="sacrificeEnchant" class="enchant"></div>
-                </div>
-            </div>
-        </div>
-        <div class="nav-side flex vertical">
-            <div class="section flex vertical center big-text">
-
-                <div><input id="syncTool" type="checkbox" checked /><label class="hover"
-                        title="Change both tools">Sync</label></div>
-                <div><input id="swapTool" type="checkbox" /><label class="hover"
-                        title="Swap target and sacrifice">Swap</label></div>
-                <div><input id="target-damaged" type="checkbox"><label for="target-damaged">Damaged</label></div>
-
-            </div>
-            <!-- <div class="section">
-                    <div class="center">
-                        <button id="findCostBtn" class="big">Enchant!</button>
-                    </div>
-                </div> -->
-            <div class="section center">
-                <h2 id="total_cost">Cost :</h2>
-                <p id="result_tool"></p>
-            </div>
-            <div class="section center">
-                <div class="">
-                    <textarea readonly rows="6" id="log" placeholder="Log Text"></textarea>
-                    <footer>&copy; Phakawat. Send bugs report to <a href="mailto:phakawat.wang@gmail.com">my email</a>
-                    </footer>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
