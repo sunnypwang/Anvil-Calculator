@@ -84,6 +84,29 @@ function App() {
     setResult(res);
   }, [target, sacrifice, isDamaged]);
 
+  // Scroll Sync Logic
+  const targetPanelRef = React.useRef(null);
+  const sacrificePanelRef = React.useRef(null);
+  const isSyncingScroll = React.useRef(false);
+
+  const handleScroll = (e, source) => {
+    if (isSyncingScroll.current) return;
+    // Only sync if tools are the same type
+    if (target.type !== sacrifice.type) return;
+
+    const sourceEl = e.target;
+    const targetEl = source === 'target' ? sacrificePanelRef.current : targetPanelRef.current;
+
+    if (targetEl) {
+      isSyncingScroll.current = true;
+      targetEl.scrollTop = sourceEl.scrollTop;
+      // Small timeout to reset the flag to prevent loop
+      setTimeout(() => {
+        isSyncingScroll.current = false;
+      }, 50);
+    }
+  };
+
   return (
     <div className="app-container">
       <header className="app-header">
@@ -93,7 +116,11 @@ function App() {
 
       <div className="calculator-grid">
         {/* Target Section */}
-        <div className="panel">
+        <div
+          className="panel"
+          ref={targetPanelRef}
+          onScroll={(e) => handleScroll(e, 'target')}
+        >
           <div className="panel-header">
             <span>Target Item</span>
             {target.type !== 'Book' && (
@@ -149,7 +176,11 @@ function App() {
         </div>
 
         {/* Sacrifice Section */}
-        <div className="panel">
+        <div
+          className="panel"
+          ref={sacrificePanelRef}
+          onScroll={(e) => handleScroll(e, 'sacrifice')}
+        >
           <div className="panel-header">
             <span>Sacrifice Item</span>
           </div>
