@@ -359,7 +359,7 @@ button {
   border-radius: var(--radius-md);
   text-align: center;
   border: 1px solid var(--border-light);
-  color: var(--accent-secondary);
+  color: var(--accent-warning);
   font-weight: 500;
   font-size: 0.9rem;
   flex: 1 1 auto;

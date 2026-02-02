@@ -7,6 +7,8 @@ export default function ResultDisplay({ result, cost, logs }) {
         .filter(([_, level]) => level > 0)
         .map(([name, level]) => ({ name, level }));
 
+    const hasIssues = logs.some(log => log.toLowerCase().includes("incompatible"));
+
     return (
         <div className="result-card">
             <div className="result-header">
@@ -19,7 +21,12 @@ export default function ResultDisplay({ result, cost, logs }) {
 
                 <div className="cost-display">
                     <span className="cost-label">Experience Cost</span>
-                    <span className="cost-value">{cost}</span>
+                    <span
+                        className="cost-value"
+                        style={{ color: hasIssues ? 'var(--accent-orange)' : 'var(--accent-success)' }}
+                    >
+                        {cost}
+                    </span>
                 </div>
             </div>
 
@@ -35,14 +42,24 @@ export default function ResultDisplay({ result, cost, logs }) {
                 )}
             </div>
 
-            <details>
+            <details open={hasIssues} className="debug-section">
                 <summary className="cursor-pointer text-muted text-sm mb-2 hover:text-white">Debug Logs</summary>
-                <textarea
-                    className="log-viewer"
-                    readOnly
-                    value={logs.join('\n')}
-                    placeholder="Calculation logs..."
-                />
+                <div className="log-viewer">
+                    {logs.map((log, index) => {
+                        const isError = log.toLowerCase().includes("incompatible");
+                        return (
+                            <div
+                                key={index}
+                                style={{
+                                    color: isError ? 'var(--accent-danger)' : 'inherit',
+                                    marginBottom: '2px'
+                                }}
+                            >
+                                {log}
+                            </div>
+                        );
+                    })}
+                </div>
             </details>
         </div>
     );

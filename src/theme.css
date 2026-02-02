@@ -1,23 +1,37 @@
 :root {
   /* HSL Color Palette - Deep Slate Theme */
-  
+
   /* Backgrounds */
-  --bg-app: #0f1115; /* Very dark slate, almost black */
-  --bg-panel: #1e2129; /* Dark slate for cards/panels */
-  --bg-input: #2a2e38; /* Slightly lighter for inputs */
-  --bg-hover: #353a45; /* Hover state */
-  
+  --bg-app: #0f1115;
+  /* Very dark slate, almost black */
+  --bg-panel: #1e2129;
+  /* Dark slate for cards/panels */
+  --bg-input: #2a2e38;
+  /* Slightly lighter for inputs */
+  --bg-hover: #353a45;
+  /* Hover state */
+
   /* Accents */
-  --accent-primary: #3ccead; /* Cyan/Diamond-like */
-  --accent-secondary: #9b59b6; /* Enchantment purple */
-  --accent-success: #55efc4; /* XP Green */
-  --accent-danger: #ff7675; /* Error/Destroy */
-  --accent-warning: #ffeaa7; /* Gold */
+  --accent-primary: #3ccead;
+  /* Cyan/Diamond-like */
+  --accent-secondary: #9b59b6;
+  /* Enchantment purple */
+  --accent-success: #55efc4;
+  /* XP Green */
+  --accent-danger: #ff7675;
+  /* Error/Destroy */
+  --accent-warning: #ffeaa7;
+  /* Gold */
+  --accent-orange: #ff9f43;
+  /* Incompatible warning */
 
   /* Text */
-  --text-main: #ecf0f1; /* Bright white-gray */
-  --text-muted: #bdc3c7; /* Muted gray for labels */
-  --text-dark: #2d3436; /* Dark text for light backgrounds */
+  --text-main: #ecf0f1;
+  /* Bright white-gray */
+  --text-muted: #bdc3c7;
+  /* Muted gray for labels */
+  --text-dark: #2d3436;
+  /* Dark text for light backgrounds */
 
   /* Borders */
   --border-light: rgba(255, 255, 255, 0.1);
@@ -31,7 +45,7 @@
   /* Typography */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Minecraftia', monospace;
-  
+
   /* Spacing */
   --radius-sm: 4px;
   --radius-md: 8px;
