@@ -112,6 +112,7 @@ function App() {
       {/* Mobile-only Header */}
       <header className="app-header app-header-mobile">
         <h1 className="app-title">Anvil Calculator</h1>
+        <p className="app-subtitle">Version 2.0 (New UI)</p>
       </header>
 
       <div className="calculator-grid">
@@ -152,6 +153,7 @@ function App() {
         <div className="controls-center">
           <header className="app-header app-header-desktop">
             <h1 className="app-title">Anvil Calculator</h1>
+            <p className="app-subtitle">Version 2.0 (New UI)</p>
           </header>
 
           <div className="action-bar flex-col w-full">
@@ -177,6 +179,7 @@ function App() {
           </div>
 
           <ResultDisplay result={result?.result} cost={result?.cost} logs={result?.logs || []} />
+          <div className="app-footer">© sunnypwang</div>
         </div>
 
         {/* Sacrifice Section */}

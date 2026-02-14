@@ -49,6 +49,12 @@
 .app-subtitle {
   color: var(--text-light);
   font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.app-footer {
+  color: var(--text-light);
+  font-size: 0.9rem;
 }
 
 /* Main Grid */
