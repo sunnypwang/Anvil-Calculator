@@ -25,7 +25,7 @@
 }
 
 .app-subtitle {
-  color: var(--text-muted);
+  color: var(--text-light);
   font-size: 0.9rem;
 }
 
@@ -211,10 +211,15 @@ button {
   background: transparent;
   border: none;
   color: var(--text-main);
-  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  /* Larger text */
   font-weight: 500;
   cursor: pointer;
-  padding: 0.25rem;
+  padding: 0;
+  /* Reduced padding to fit container */
+  line-height: 1;
+  /* Compact line height */
 }
 
 .penalty-input-group {
@@ -379,12 +384,14 @@ button {
 }
 
 .result-item-badge {
-  background: var(--bg-input);
+  background: #555555;
+  /* Dark gray for contrast */
   padding: 0.5rem;
   border-radius: var(--radius-md);
   text-align: center;
   border: 1px solid var(--border-light);
-  color: var(--accent-warning);
+  color: #FFFF55;
+  /* Minecraft Yellow */
   font-weight: 500;
   font-size: 0.9rem;
   flex: 1 1 auto;
