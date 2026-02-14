@@ -1,0 +1,85 @@
+/* The font file in this archive was created by Andrew Tyler www.AndrewTyler.net and font@andrewtyler.net
+License: http://creativecommons.org/licenses/by-sa/3.0/us/
+
+Use at 12 or 24 px size with anti-alising off for best results.
+
+Creative Commons BY-SA license.
+
+Not affiliated or endorsed by Mojang in anyway.  */
+
+@import './theme.css';
+
+@font-face {
+  font-family: "Minecraftia";
+  src: url("/font/Minecraftia.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.5px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-main);
+  transition: all 0.2s ease;
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-main);
+  background-color: var(--bg-input);
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(60, 206, 173, 0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

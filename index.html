@@ -1,98 +1,19 @@
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="js/data/conflict.js"></script>
-        <script src="js/data/applicable.js"></script>
-        <script src="js/data/enchant_list.js"></script>
-        <script src="js/logic.js"></script>
-        <script src="js/app.js"></script>
-        <link
-            href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
-            rel="stylesheet"
-        />
-        <link href="css/font/Minecraftia.ttf" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-        <link rel="icon" href="favicon.png" />
-        <title>Anvil Calculator</title>
-    </head>
+<!doctype html>
+<html lang="en">
 
-    <body class="flex-wrapper">
-        <div class="nav-main flex-wrapper">
-            <div class="section full-width bgcolor" id="target">
-                <div class="container">
-                    <span class="left big-text">Target</span>
-                    <span class="left">
-                        <input id="target-damaged" type="checkbox" />Damaged
-                    </span>
-                    <span class="right"
-                        ><label
-                            class="hover"
-                            title="How many times the tool has been used on an Anvil before"
-                            >Prior Work Penalty</label
-                        ><input
-                            id="target_penalty"
-                            type="number"
-                            placeholder="0"
-                            min="0"
-                            max="6"
-                    /></span>
-                </div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anvil Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
-                <div class="container type">
-                    <select class="big-text"></select>
-                </div>
-                <div class="container enchant"></div>
-            </div>
-            <div class="section no-padding plus-sign">+</div>
-            <div class="section full-width bgcolor" id="sacrifice">
-                <div class="container">
-                    <span class="left big-text">Sacrifice</span>
-                    <span class="right"
-                        ><label
-                            class="hover"
-                            title="How many times the tool has been used on an Anvil before"
-                            >Prior Work Penalty</label
-                        ><input
-                            id="sacrifice_penalty"
-                            type="number"
-                            placeholder="0"
-                            min="0"
-                            max="6"
-                    /></span>
-                </div>
-                <div class="container type">
-                    <select class="big-text"></select>
-                </div>
-                <div class="container enchant"></div>
-            </div>
-        </div>
-        <div class="nav-side">
-            <div class="section">
-                <div class="container center big-text">
-                    <input id="syncTool" type="checkbox" checked/><span class="hover" title="Change both tools">Sync</span>
-                </div>
-                <div class="container center big-text">
-                    <input id="swapTool" type="checkbox" /><span class="hover" title="Swap target and sacrifice">Swap</span>
-                </div>
-            </div>
-            <div class="section">
-                <div class="container center">
-                    <button id="findCostBtn" class="big">Enchant!</button>
-                </div>
-            </div>
-            <div class="section center">
-                <h2 id="total_cost">Cost :</h2>
-                <p id="result_tool"></p>
-            </div>
-            <div class="section center">
-                <textarea
-                    readonly
-                    rows="6"
-                    id="log"
-                    placeholder="Log Text"
-                ></textarea>
-            </div>
-        </div>
-    </body>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

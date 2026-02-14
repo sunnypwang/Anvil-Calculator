@@ -1,24 +1,19 @@
-# Anvil-Calculator
-Minecraft Anvil XP Calculator for combining tools
+# Anvil Calculator
 
-A simple client-side Web Application that help you calculate XP needed for Anvil works
-
-Anvil mechanics derived from https://minecraft.gamepedia.com/Anvil_mechanics
+Minecraft Anvil XP calculator. Determine the optimal order to combine your enchantments and save your levels!
 
 ## Features
-- All enchantable tools available (including books!)
-- Compatible Enchantments and their available levels list for each tool
-- Incompatible enchantments handling
-- Swapping Target and Sacrifice tools
-- Set a prior work penalty for each tool slot
-- Display total XP cost including the result tool after combining
-- A log displaying calculation breakdown for each enchantment
-- Responsive design!
 
-## Changelog
-```
-V1.1 - Redesign UI/UX for simpler use 
-```
+- **New UI Version**: A completely redesigned, modern, and responsive interface for a better user experience.
+- **Support for New Tools**: Now supports the **Mace** and the **Spear**, including their exclusive enchantments:
+  - **Mace**: Density, Breach, Wind Burst
+  - **Spear**: Lunge
+- Accurate XP cost calculation for all gear and books.
 
+## Issues
 
-Thanks to klaimmore for bug fixing and MYCRAFTisbest for adding Soul Speed enchantment
+If you have any issues, please raise them in [GitHub Issues](https://github.com/sunnypwang/Anvil-Calculator/issues).
+
+## Acknowledgments
+
+Big thanks for everyone!

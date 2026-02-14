@@ -1,0 +1,61 @@
+:root {
+  /* HSL Color Palette - Minecraft GUI Theme */
+
+  /* Backgrounds */
+  --bg-app: #202020;
+  /* Keep outer app dark for contrast/focus */
+  --bg-panel: #c6c6c6;
+  /* Standard GUI Gray */
+  --bg-input: #8b8b8b;
+  /* Darker slot background */
+  --bg-hover: #dbdbdb;
+  /* Lighter gray for hover */
+
+  /* Accents */
+  --accent-primary: #54F2F3;
+  /* Cyan remains for brand/highlights */
+  --accent-secondary: #58247a;
+  /* Darker purple for readability on light bg */
+  --accent-success: #27ae60;
+  /* Darker green for readability */
+  --accent-danger: #c0392b;
+  /* Darker red */
+
+  /* Re-thinking Warning: In game, tooltip text is often yellow/white on purple bg. 
+     But here we are on light gray. Let's use a dark gold/brown. */
+  --accent-warning: #d35400;
+  /* Dark Orange/Brown for warnings */
+  --accent-orange: #d35400;
+  /* Synced with warning for consistency */
+
+  /* Text */
+  --text-light: #cfcfcf;
+
+  --text-main: #404040;
+  /* Dark Gray for main text */
+  --text-muted: #535353;
+  /* Slightly lighter dark gray */
+  --text-dark: #202020;
+  /* Almost black */
+
+  /* Borders */
+  --border-light: #555555;
+  /* Dark gray border */
+  --border-focus: #3ccead;
+
+  /* Shadows */
+  --shadow-sm: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  /* Hard shadows for pixel feel */
+  --shadow-md: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 10px rgba(60, 206, 173, 0.3);
+
+  /* Typography */
+  --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-display: 'Minecraftia', monospace;
+
+  /* Spacing */
+  --radius-sm: 4px;
+  --radius-md: 0px;
+  /* Square corners for GUI feel */
+  --radius-lg: 0px;
+}
