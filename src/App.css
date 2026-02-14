@@ -237,34 +237,45 @@ button {
 
 
 
+
 .penalty-slider {
   -webkit-appearance: none;
   width: 100px;
-  height: 6px;
+  height: 8px;
+  /* Slightly thicker */
   background: var(--bg-input);
-  border-radius: 3px;
+  border-radius: 0;
+  /* Square edges */
   border: 1px solid var(--border-light);
   outline: none;
   cursor: pointer;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.5);
+  /* Inner shadow for depth */
 }
 
 .penalty-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--accent-primary);
+  width: 12px;
+  height: 20px;
+  /* Tall rectangular thumb like Minecraft options */
+  border-radius: 0;
+  background: var(--bg-panel);
   cursor: pointer;
-  border: 2px solid var(--bg-panel);
+  border: 2px solid var(--border-light);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2), 2px 0 0 rgba(0, 0, 0, 0.5);
+  /* 3D effect */
+  margin-top: -6px;
+  /* Center thumb vertically */
 }
 
 .penalty-slider::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--accent-primary);
+  width: 12px;
+  height: 20px;
+  border-radius: 0;
+  background: var(--bg-panel);
   cursor: pointer;
-  border: 2px solid var(--bg-panel);
+  border: 2px solid var(--border-light);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2), 2px 0 0 rgba(0, 0, 0, 0.5);
 }
 
 /* Enchantment List */
