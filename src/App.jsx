@@ -111,7 +111,7 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1 className="app-title">Anvil Calculator</h1>
-        <p className="app-subtitle">Optimize your enchantment combinations</p>
+
       </header>
 
       <div className="calculator-grid">
