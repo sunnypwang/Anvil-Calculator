@@ -9,7 +9,8 @@ export default function ToolSelect({ side, tool, onToolChange, onPenaltyChange }
 
     // Icon handling: simple implementation assuming images exist
     // Fallback to empty if not found? Browser handles broken image.
-    const iconSrc = `/res/${tool.type}.png`;
+    // Base URL support for GitHub Pages
+    const iconSrc = `${import.meta.env.BASE_URL}res/${tool.type}.png`;
 
     return (
         <div className="tool-select-container">
