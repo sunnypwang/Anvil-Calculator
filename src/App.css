@@ -114,6 +114,11 @@
   transform: translateY(-1px);
 }
 
+.btn-primary:active {
+  filter: brightness(0.8);
+  transform: translateY(1px);
+}
+
 .btn-secondary {
   background: var(--bg-input);
   color: var(--text-main);
