@@ -109,9 +109,9 @@ function App() {
 
   return (
     <div className="app-container">
-      <header className="app-header">
+      {/* Mobile-only Header */}
+      <header className="app-header app-header-mobile">
         <h1 className="app-title">Anvil Calculator</h1>
-
       </header>
 
       <div className="calculator-grid">
@@ -150,6 +150,10 @@ function App() {
 
         {/* Center Controls & Result */}
         <div className="controls-center">
+          <header className="app-header app-header-desktop">
+            <h1 className="app-title">Anvil Calculator</h1>
+          </header>
+
           <div className="action-bar flex-col w-full">
             <button
               className="btn-primary w-full"

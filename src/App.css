@@ -22,6 +22,28 @@
   color: var(--accent-primary);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   margin-bottom: 0px;
+  line-height: 1.2;
+}
+
+/* Responsive Header Control */
+.app-header-mobile {
+  display: none;
+  /* Hidden by default */
+}
+
+.app-header-desktop {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .app-header-mobile {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .app-header-desktop {
+    display: none;
+  }
 }
 
 .app-subtitle {
@@ -317,8 +339,8 @@ button {
 }
 
 .btn-level {
-  width: 2.75rem;
-  /* Larger touch target */
+  width: 2.25rem;
+  /* Thinner for mobile */
   height: 2.75rem;
   display: flex;
   align-items: center;
@@ -332,6 +354,7 @@ button {
   border: 1px solid var(--border-light);
   cursor: pointer;
   padding: 0;
+  flex-shrink: 0;
 }
 
 .btn-level:hover {
@@ -537,4 +560,65 @@ button {
   color: var(--accent-primary);
   padding-left: 1rem;
   /* Slide effect */
+}
+
+/* Compact Mobile Layout Overrides */
+@media (max-width: 1000px) {
+  .calculator-grid {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    gap: 1rem;
+    /* Reduced gap */
+  }
+
+  .app-container {
+    height: auto;
+    overflow: visible;
+    padding: 0.5rem;
+    /* Reduced outer padding */
+  }
+
+  /* Compact Panel for Mobile */
+  .panel {
+    padding: 0.75rem;
+    /* Reduced padding */
+  }
+
+  .panel-header {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* Compact Rows */
+  .enchant-row {
+    padding: 0.5rem;
+    /* Tighter rows */
+    flex-wrap: wrap;
+    /* Allow wrapping if absolutely needed */
+    gap: 0.5rem;
+  }
+
+  .enchant-name {
+    font-size: 0.9rem;
+    /* Smaller text */
+    padding-right: 0.5rem;
+  }
+
+  /* Even smaller buttons for mobile */
+  .btn-level {
+    width: 2rem;
+    height: 2.25rem;
+    font-size: 0.9rem;
+  }
+
+  .level-controls {
+    gap: 0.25rem;
+    /* Tighter button grouping */
+  }
+
+  .tool-dropdown {
+    font-size: 1rem;
+    /* Reduced from 1.5rem for mobile */
+  }
 }
