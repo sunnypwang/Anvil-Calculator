@@ -7,7 +7,7 @@ export default function ResultDisplay({ result, cost, logs }) {
         .filter(([_, level]) => level > 0)
         .map(([name, level]) => ({ name, level }));
 
-    const hasIssues = logs.some(log => log.toLowerCase().includes("incompatible"));
+    const hasIssues = logs.some(log => log.toLowerCase().includes("incompatible") || log.includes("!!! Suggestion"));
 
     return (
         <div className="result-card">
@@ -47,12 +47,19 @@ export default function ResultDisplay({ result, cost, logs }) {
                 <div className="log-viewer">
                     {logs.map((log, index) => {
                         const isError = log.toLowerCase().includes("incompatible");
+                        const isSuggestion = log.includes("!!! Suggestion");
+
+                        let color = 'inherit';
+                        if (isError) color = 'var(--accent-danger)';
+                        if (isSuggestion) color = '#55efc4'; // Bright green (Minecraft XP color)
+
                         return (
                             <div
                                 key={index}
                                 style={{
-                                    color: isError ? 'var(--accent-danger)' : 'inherit',
-                                    marginBottom: '2px'
+                                    color: color,
+                                    marginBottom: '2px',
+                                    fontWeight: isSuggestion ? 'bold' : 'normal'
                                 }}
                             >
                                 {log}

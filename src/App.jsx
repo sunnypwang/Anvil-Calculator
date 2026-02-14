@@ -81,6 +81,17 @@ function App() {
     // If sync is on, logic.js didn't force them to be identical, it just auto-updated UI.
     // Calculate cost
     const res = findCost(target, sacrifice, isDamaged && target.type === sacrifice.type);
+
+    // Calculate reverse cost (Swap suggestion)
+    // Only check if both are tools or interesting cases, preventing weird book swaps if needed.
+    // Actually, usually beneficial to check regardless.
+    const swapRes = findCost(sacrifice, target, isDamaged && target.type === sacrifice.type);
+
+    if (swapRes.cost < res.cost && swapRes.cost > 0) {
+      if (!res.logs) res.logs = [];
+      res.logs.push(`!!! Suggestion: Swap items for lower cost! (${swapRes.cost} levels)`);
+    }
+
     setResult(res);
   }, [target, sacrifice, isDamaged]);
 
